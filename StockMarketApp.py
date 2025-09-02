@@ -93,4 +93,20 @@ if portfolio_input:
             # Portfolio Allocation Pie Chart
             fig = px.pie(df_portfolio, names="Ticker", values="Value", title="Portfolio Allocation")
             st.plotly_chart(fig, use_container_width=True)
+      
+# Portfolio Value Over Time
+       
+portfolio_period = st.sidebar.selectbox("Portfolio History Period", ["1mo", "3mo", "6mo", "1y"], index=2)
 
+all_history = pd.DataFrame()
+for ticker_port, shares in portfolio.items():
+    hist = yf.download(ticker_port, period=portfolio_period)["Close"]
+    hist = hist * shares
+    all_history[ticker_port] = hist
+
+# Sum across all stocks for total portfolio value
+all_history["Portfolio Value"] = all_history.sum(axis=1)
+
+st.subheader("Portfolio Value Over Time")
+fig = px.line(all_history, x=all_history.index, y="Portfolio Value", title="Total Portfolio Value Over Time")
+st.plotly_chart(fig, use_container_width=True)
