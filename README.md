@@ -24,7 +24,7 @@ To view this in your computer
 2. Install dependacies: pip install -r requirements.txt
 3. Run the app: streamlit run StockMarketApp.py
 
-Or view online at: 
+Or view online at: https://stockmarkettracker-nqku9wsjxjoxswzpptntqk.streamlit.app/
 
 Created by Liam Mangan
 LinkedIn: www.linkedin.com/in/liam-mangan11
