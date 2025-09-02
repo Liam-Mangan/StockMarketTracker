@@ -14,9 +14,6 @@ Made using
 - Python (pandas, yfinance, plotly)
 - Streamlit (interactive dashboard)
 
-Screenshots
-(Add screenshots of your dashboard here once running locally)
-
 To view this in your computer
 1. Clone this repo:
    git clone https://github.com/YOUR_USERNAME/StockMarketTracker.git
